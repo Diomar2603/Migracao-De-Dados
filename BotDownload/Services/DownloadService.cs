@@ -18,6 +18,8 @@ namespace BotDownload.Services
 
             ChromeOptions options = new ChromeOptions();
             options.AddUserProfilePreference("download.default_directory", pathDownload);
+            options.AddArguments("--headless");
+
 
             try
             {
@@ -25,6 +27,8 @@ namespace BotDownload.Services
                 WebDriverWait waitElements = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
                 WebDriverWait waitDownload = new WebDriverWait(driver, TimeSpan.FromSeconds(500));
 
+                Console.Clear();
+                Console.WriteLine("Iniciando Downloa de Arquivo.");
 
                 driver.Navigate()
                     .GoToUrl(linkArquivoCnpj);
@@ -33,10 +37,11 @@ namespace BotDownload.Services
 
                 driver.FindElement(By.Id(btnDownload)).Click();
 
-                waitDownload.Until( _ => pastaCriada = File.Exists(Path.Combine(pathDownload, "DADOS_ABERTOS_CNPJ_01.zip")));
+                waitDownload.Until(_ => pastaCriada = File.Exists(Path.Combine(pathDownload, "DADOS_ABERTOS_CNPJ_01.zip")));
 
                 driver.Quit();
 
+                Console.WriteLine("Downloa de Arquivo finalizado.\n");
             }
             catch (Exception e)
             {

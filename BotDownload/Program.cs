@@ -5,7 +5,9 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        string caminhoResources , caminhoArquivosZipados, caminhoArquivosExtraidos, caminhoWebDriver;
+        string caminhoResources , caminhoArquivosZipados, caminhoArquivosExtraidos, caminhoWebDriver,
+               arquivoZipado, arquivoExtraido;
+
         caminhoResources = Path.GetDirectoryName(typeof(Program).Assembly.Location);
         caminhoResources = caminhoResources.Split(@"BotDownload\")[0] + @"BotDownload\Resources";
 
@@ -23,16 +25,24 @@ internal class Program
             Directory.CreateDirectory(caminhoArquivosExtraidos);
         }
 
+        bool arquivoExtraidosExiste = Directory.GetFiles(caminhoArquivosExtraidos).Length != 0;
+
         //baixar arquivo
-        if (File.Exists(Path.Combine(caminhoArquivosZipados, "DADOS_ABERTOS_CNPJ_01.zip")))
+        if (Directory.GetFiles(caminhoArquivosZipados).Length == 0 && !arquivoExtraidosExiste)
         {
+
             DownloadService downloadService = new DownloadService();
 
             downloadService.BaixarArquivosCnpj(caminhoWebDriver, caminhoArquivosZipados);
 
         }
 
-
+        //Descompactar arquivo
+        if (!arquivoExtraidosExiste)
+        {
+            DescompactaService service = new DescompactaService();
+            service.DescompactaPasta(caminhoArquivosZipados, caminhoArquivosExtraidos);
+        }
 
 
 

@@ -44,6 +44,10 @@ internal class Program
             service.DescompactaPasta(caminhoArquivosZipados, caminhoArquivosExtraidos);
         }
 
+        //Ler e inserir no banco de dados
+        LeituraService leituraService = new LeituraService();
+        leituraService.LerArquivo(caminhoArquivosExtraidos);
+
 
 
     }

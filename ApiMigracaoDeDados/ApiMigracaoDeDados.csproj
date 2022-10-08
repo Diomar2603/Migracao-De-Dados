@@ -7,13 +7,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\FacadeImplements\**" />
+    <Compile Remove="Data\Facade\**" />
+    <Compile Remove="Entities\**" />
+    <Content Remove="Data\FacadeImplements\**" />
+    <Content Remove="Data\Facade\**" />
+    <Content Remove="Entities\**" />
+    <EmbeddedResource Remove="Data\FacadeImplements\**" />
+    <EmbeddedResource Remove="Data\Facade\**" />
+    <EmbeddedResource Remove="Entities\**" />
+    <None Remove="Data\FacadeImplements\**" />
+    <None Remove="Data\Facade\**" />
+    <None Remove="Entities\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.17.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Facade\" />
-    <Folder Include="Data\FacadeImplements\" />
-    <Folder Include="Entities\" />
+    <Folder Include="Data\" />
   </ItemGroup>
 
 </Project>

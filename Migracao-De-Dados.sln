@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotDownload", "BotDownload\BotDownload.csproj", "{D6EB0753-1FC5-4E5C-9334-3290E8152E67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotDownload", "BotDownload\BotDownload.csproj", "{D6EB0753-1FC5-4E5C-9334-3290E8152E67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestesMigracaoDeDados", "TestesMigracaoDeDados\TestesMigracaoDeDados.csproj", "{09D066FE-C998-4BF7-81F4-D1F01C757113}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiMigracaoDeDados", "ApiMigracaoDeDados\ApiMigracaoDeDados.csproj", "{7617C623-FCE6-46B5-A7FE-F10F7DCB7ACA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiMigracaoDeDados", "ApiMigracaoDeDados\ApiMigracaoDeDados.csproj", "{7617C623-FCE6-46B5-A7FE-F10F7DCB7ACA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{D6EB0753-1FC5-4E5C-9334-3290E8152E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6EB0753-1FC5-4E5C-9334-3290E8152E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6EB0753-1FC5-4E5C-9334-3290E8152E67}.Release|Any CPU.Build.0 = Release|Any CPU
-		{09D066FE-C998-4BF7-81F4-D1F01C757113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{09D066FE-C998-4BF7-81F4-D1F01C757113}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{09D066FE-C998-4BF7-81F4-D1F01C757113}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{09D066FE-C998-4BF7-81F4-D1F01C757113}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7617C623-FCE6-46B5-A7FE-F10F7DCB7ACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7617C623-FCE6-46B5-A7FE-F10F7DCB7ACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7617C623-FCE6-46B5-A7FE-F10F7DCB7ACA}.Release|Any CPU.ActiveCfg = Release|Any CPU

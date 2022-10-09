@@ -55,10 +55,10 @@ namespace BotDownload.Services
                     empresa.Cnpj = linha.Substring(3, 14).Trim();
                     empresa.RazaoSocial = linha.Substring(18, 150).Trim();
                     empresa.IdMatrizFilial = linha.Substring(17, 1).Trim();
-                    empresa.NomeFantasia = linha.Substring(168, 55).Trim();
-                    empresa.SituacaoCadastral = linha.Substring(223, 2).Trim();
+                    empresa.NmFantasia = linha.Substring(168, 55).Trim();
+                    empresa.StCadastral = linha.Substring(223, 2).Trim();
                     empresa.CapitalSocial = Convert.ToDouble(linha.Substring(891, 14).Trim());
-                    empresa.DataSituacaoCadastral = DateTime.ParseExact(linha.Substring(225, 8).Trim(), "yyyyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None);
+                    empresa.DtCadastral = DateTime.ParseExact(linha.Substring(225, 8).Trim(), "yyyyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None);
                     empresa.Cep = linha.Substring(674, 8).Trim();
 
                     EmpresasList.Add(empresa);
@@ -77,7 +77,7 @@ namespace BotDownload.Services
             }
             catch (Exception e)
             {
-                
+                Console.WriteLine("erro ao ler arquivo : "+ e.Message);
             }
         }
 

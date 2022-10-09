@@ -25,13 +25,13 @@ namespace BotDownload.Data
             collectionSocio = database.GetCollection<Socio>("Socios");
         }
 
-        public void InsertAllEmpresa(List<Empresa> empresas)
+        public async void InsertAllEmpresa(List<Empresa> empresas)
         {
             if (empresas.Any())
                 collectionEmpresa.InsertMany(empresas);
         }
 
-        public void InsertAllSocio(List<Socio> socios)
+        public async void InsertAllSocio(List<Socio> socios)
         {
             if (socios.Any())
                 collectionSocio.InsertMany(socios);

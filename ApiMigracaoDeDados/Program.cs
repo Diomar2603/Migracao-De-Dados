@@ -1,3 +1,7 @@
+using ApiMigracaoDeDados.Data;
+using ApiMigracaoDeDados.Services;
+using Microsoft.Extensions.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +10,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.Configure<DbSettings>(
+    builder.Configuration.GetSection("DatabaseSettings"));
+builder.Services.AddSingleton<IDbSettings>(_ => _.GetRequiredService<IOptions<DbSettings>>().Value);
+builder.Services.AddSingleton<EmpresasService>();
 
 var app = builder.Build();
 
